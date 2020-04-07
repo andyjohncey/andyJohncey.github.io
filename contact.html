@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // YOUR_USER_ID obtained from account in emailjs
+      emailjs.init('user_pvOkZuPU7f4VkhEOoVGr0');
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // generate the contact number value
+        this.contact_number.value = Math.random() * 100000 | 0;
+        emailjs.sendForm('contact_service', 'contact_template', this);
+      });
+    }
+  </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <meta name="viewport" content="width-device-width, initial-scale=1">
+</head>
+
+<body>
+  <Header>
+    <h1>Andrew Johncey</h1>
+  </Header>
+  <nav class="nav nav-pills flex-column flex-sm-row">
+    <a class="flex-sm-fill text-sm-center nav-link" href="index.html">About Me <span
+        class="sr-only">(current)</span></a>
+    <a class="flex-sm-fill text-sm-center nav-link" href="portfolio.html">Portfolio</a>
+    <a class="flex-sm-fill text-sm-center nav-link active" href="contact.html">Contact</a>
+    </div>
+  </nav>
+  </nav>
+
+  <main>
+    <section class="section-container">
+      <div class="main">
+        <div class="row">
+          <div class="col-12">
+            <div class="container">
+              <form id="contact-form">
+                <div>
+                  <input type="hidden" name="contact_number">
+                  <label>Name</label>
+                  <input type="text" class="form-control" name="user_name">
+                </div>
+                <br>
+                <div>
+                  <label>Email Address</label>
+                  <input type="email" class="form-control" name="user_email">
+                </div>
+                <br>
+                <div>
+                  <label>Message</label>
+                  <textarea name="message" class="form-control"></textarea>
+                  <br>
+                  <input type="submit" class="btn btn-primary" value="Send">
+                </div>
+              </form>
+
+              <!-- <div class="form-group">
+                  <label for="exampleFormControlInput1">Name</label>
+                  <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="John Smith">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Message</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <br>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form> -->
+            </div>
+
+    </section>
+  </main>
+  <footer class="footer mt-auto py-3">
+    <div class="container-2">
+      <span class="text">Copyright@ Andy Johncey
+      </span>
+    </div>
+  </footer>
+</body>
+
+</html>
